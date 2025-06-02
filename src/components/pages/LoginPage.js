@@ -6,11 +6,31 @@ import EnterBtn from "./../ui/allBtns/enter.btn/EnterBtn";
 import TextBtn from './../ui/allBtns/text.btn/TextBtn';
 import EnterpriseBtn from "./../ui/allBtns/empresa.btn/EnterpriseBtn";
 
- function LoginPage(){
+function LoginPage() {
+    const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
+
+    const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+        if (emailError) setEmailError('');
+    };
+
+    const validateEmail = () => {
+        if (!email.includes('@')) {
+            setEmailError('Email inválido');
+        } else {
+            setEmailError('');
+        }
+    };
     return <>
         <div className={styles.center}>
             <LoginText texto="Login!" />
-            <Input placeholder="Usuário" />
+            <Input
+                placeholder="Usuário"
+                value={email}
+                onChange={handleEmailChange}
+                onBlur={validateEmail}
+                error={emailError} />
             <Input placeholder="Senha" />
             <EnterBtn texto="Entrar" />
             <EnterpriseBtn icon={faCircleUser} />
@@ -21,6 +41,6 @@ import EnterpriseBtn from "./../ui/allBtns/empresa.btn/EnterpriseBtn";
             <div id='teste'></div>
         </div>
     </>
- }
+}
 
-    export default LoginPage
+export default LoginPage
