@@ -5,11 +5,11 @@ function Input({ placeholder, value, onChange, onBlur, type, error }) {
         <input id="input"
             className={styles.Input}
             placeholder={placeholder}
-            type={placeholder === 'Senha' ? 'password' : 'text'}
+            type={type || (placeholder === 'Senha' ? 'password' : 'text')}
             value={value}
             onChange={onChange}
             onBlur={onBlur}></input>
-            {error && <span style={{ color: 'red', fontSize: '0.8rem' }}>{error}</span>}
+        {error && <span style={{ color: 'red', fontSize: '0.8rem' }}>{error}</span>}
     </>
 }
 

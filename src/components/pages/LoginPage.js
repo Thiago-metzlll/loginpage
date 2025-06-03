@@ -13,7 +13,7 @@ function LoginPage() {
     const [senha, setSenha] = useState('');
     const [senhaError, setSenhaError] = useState('');
 
-    const senhaTeste = '123456'; // senha fixa para teste
+    const senhaTeste = '123456'; 
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -35,7 +35,7 @@ function LoginPage() {
             setSenhaError('Senha incorreta.');
         } else {
             setSenhaError('');
-            alert('Senha correta!'); // mensagem de sucesso (pode trocar)
+            alert('Senha correta!'); 
         }
     };
     return <>
@@ -49,8 +49,12 @@ function LoginPage() {
                 error={emailError} />
             <Input
                 placeholder="Senha"
+                type="password"
+                value={senha}
+                onChange={e => setSenha(e.target.value)}
                 onBlur={validateSenha}
-                error={senhaError} />
+                error={senhaError}
+            />
             <EnterBtn texto="Entrar" />
             <EnterpriseBtn icon={faCircleUser} />
             <TextBtn texto="Criar contaaaa" />
