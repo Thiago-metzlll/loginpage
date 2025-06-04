@@ -1,9 +1,13 @@
-.center {
-  height: 100vh;
+.app {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  background-color: rgba(18, 132, 231, 0.479);
+  background-color: #f4f4f4;
+  
+
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
 }

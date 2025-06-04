@@ -1,0 +1,17 @@
+.bodylogin {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-image: url('../../assets/josh-hild-coam-W6_tK0-unsplash.jpg');
+    background-size: 1000px auto;
+    
+
+    background-color: rgba(0, 0, 0, 0.5); // cor escura sem opacidade total
+    background-blend-mode: darken; // mistura a imagem com a cor
+
+
+
+}

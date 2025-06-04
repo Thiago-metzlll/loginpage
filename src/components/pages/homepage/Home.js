@@ -1,16 +1,24 @@
 // src/components/CartaoListaVirtual.jsx
 import { FixedSizeList } from "react-window";
-import styles from './home.module.scss';
+import styles from './Home.module.scss';
+import { FixedSizeGrid as Grid } from "react-window";
 
-function Home({ alturaCartao = 120 }) {
+
+function Home({ alturaCartao = 120, larguraCartao = 250 }) {
 
   const cartoes = Array.from({ length: 1000 }, (_, i) => ({
     id: i + 1,
     nome: `Cartão ${i + 1}`,
   }));
+  const colunas = 5;
+  const linhas = Math.ceil(cartoes.length / colunas);
 
-  const Row = ({ index, style }) => {
+  const Cell = ({ columnIndex, rowIndex, style }) => {
+    const index = rowIndex * colunas + columnIndex;
+    if (index >= cartoes.length) return null;
+
     const cartao = cartoes[index];
+
     return (
       <div style={{ ...style, padding: "10px", boxSizing: "border-box" }}>
         <div
@@ -23,16 +31,18 @@ function Home({ alturaCartao = 120 }) {
     );
   };
 
-  return <>
-    <FixedSizeList
+  return (
+    <Grid
+      columnCount={colunas}
+      rowCount={linhas}
+      columnWidth={larguraCartao}
+      rowHeight={alturaCartao}
       height={600}
-      itemCount={cartoes.length}
-      itemSize={alturaCartao}
-      width="100vw"
+      width={larguraCartao * colunas}
     >
-      {Row}
-    </FixedSizeList>
-  </>
+      {Cell}
+    </Grid>
+  );
 }
 
 export default Home;

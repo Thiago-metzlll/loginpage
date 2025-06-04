@@ -1,0 +1,27 @@
+.header {
+  background-color:  #204852;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;  
+  align-items: center;
+  gap: 15px;                  
+  height: 50px;
+}
+
+.link {
+  background-color: #397c8f;
+  color: #282c34;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+.link:hover {
+  background-color: #21a1f1;
+}

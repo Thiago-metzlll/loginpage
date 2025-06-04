@@ -1,7 +1,7 @@
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import Input from "./../ui/input/Input";
 import LoginText from "./../ui/LoginText/LoginText";
-import styles from './../ui/App.module.scss';
+import styles from "./LoginPage.module.scss"
 import EnterBtn from "./../ui/allBtns/enter.btn/EnterBtn";
 import TextBtn from './../ui/allBtns/text.btn/TextBtn';
 import EnterpriseBtn from "./../ui/allBtns/empresa.btn/EnterpriseBtn";
@@ -39,7 +39,7 @@ function LoginPage() {
         }
     };
     return <>
-        <div className={styles.center}>
+        <div className={styles.bodylogin}>
             <LoginText texto="Login!" />
             <Input
                 placeholder="Usuário"
