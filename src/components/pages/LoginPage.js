@@ -13,7 +13,8 @@ function LoginPage() {
     const [senha, setSenha] = useState('');
     const [senhaError, setSenhaError] = useState('');
 
-    const senhaTeste = '123456'; 
+    const senhaTeste = '123456';
+    const emailTeste = 'thiagostopla@gmail.com'
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -23,8 +24,11 @@ function LoginPage() {
     const validateEmail = () => {
         if (!email.includes('@')) {
             setEmailError('Email inválido');
+        } else if (email !== emailTeste) {
+            setEmailError('Email não corresponde ao cadastro.');
         } else {
             setEmailError('');
+            alert('Email correto!');
         }
     };
 
@@ -35,7 +39,7 @@ function LoginPage() {
             setSenhaError('Senha incorreta.');
         } else {
             setSenhaError('');
-            alert('Senha correta!'); 
+            alert('Senha correta!');
         }
     };
     return <>
