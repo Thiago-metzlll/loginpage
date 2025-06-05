@@ -1,3 +1,14 @@
+.Homebody {
+  background-image: url('../../../assets/Facade_opera_Garnier.jpg');
+  background-size: 1150px auto;
+
+
+  background-color: rgba(0, 0, 0, 0.5); // cor escura sem opacidade total
+  background-blend-mode: darken; // mistura a imagem com a cor
+
+
+}
+
 .Card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -8,6 +19,7 @@
   flex-direction: column;
   justify-content: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  gap: 5%;
 
   &:hover {
     transform: scale(1.02);
@@ -28,7 +40,7 @@
 }
 
 .cardImage {
-  width: 50%;
+  width: 40%;
   height: 40px;
   object-fit: cover;
   border-radius: 9px;
@@ -78,6 +90,6 @@
   }
 
   svg {
-    font-size: 16px;
+    font-size: 10px;
   }
 }
