@@ -8,12 +8,14 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 
 
-function Home({ alturaCartao = 120, larguraCartao = 250 }) {
+function Home({ alturaCartao = 120, larguraCartao = 250, GAP = 10 }) {
 
   const [cartoes, setCartoes] = useState(
     Array.from({ length: 10 }, (_, i) => ({
       id: i + 1,
       nome: `Cartão ${i + 1}`,
+      descricao: `Descrição do cartão ${i + 1}`,
+      imagem: 'https://images.unsplash.com/photo-1741850821875-926bc6332d97?w=500&auto=format&fit=crop&q=60'
     }))
   );
 
@@ -28,7 +30,9 @@ function Home({ alturaCartao = 120, larguraCartao = 250 }) {
       ...prev,
       {
         id: prev.length + 1,
-        name: 'Cartão ${prev.length + 1'
+        nome: `Cartão ${prev.length + 1}`,
+        descricao: `Nova descrição do cartão ${prev.length + 1}`,
+        imagem: 'https://source.unsplash.com/random/300x100?sig=' + prev.length
       }
       ,
     ]);
@@ -38,6 +42,8 @@ function Home({ alturaCartao = 120, larguraCartao = 250 }) {
 
   const colunas = 5;
   const linhas = Math.ceil((cartoes.length + 1) / colunas); // +1 para o botão "Adicionar"
+  const cellWidth = larguraCartao + GAP;
+  const cellHeight = alturaCartao + GAP;
 
 
   const Cell = ({ columnIndex, rowIndex, style }) => {
@@ -67,12 +73,12 @@ function Home({ alturaCartao = 120, larguraCartao = 250 }) {
 
     return (
       <div style={{ ...style, padding: "10px", boxSizing: "border-box" }}>
-        <div
-          className={styles.Card}
-        >
+        <div className={styles.Card}>
           <h4>{cartao.nome}</h4>
-          <img src="https://images.unsplash.com/photo-1741850821875-926bc6332d97?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTd8fHxlbnwwfHx8fHw%3D"
-            alt="Imagem do cartão" className={styles.cardImage} />
+          <p className={styles.cardDescription}>{cartao.descricao}</p>
+          <img src={cartao.imagem}
+            alt="Imagem do cartão"
+            className={styles.cardImage} />
           <div>
             <button onClick={() => handleDelete(cartao.id)} className={styles.DeleteButton}>
               <FontAwesomeIcon icon={faTrash} />
@@ -90,10 +96,10 @@ function Home({ alturaCartao = 120, larguraCartao = 250 }) {
       <Grid
         columnCount={colunas}
         rowCount={linhas}
-        columnWidth={larguraCartao}
-        rowHeight={alturaCartao}
+        columnWidth={cellWidth}
+        rowHeight={cellHeight}
         height={600}
-        width={larguraCartao * colunas}
+        width={cellWidth * colunas}
       >
         {Cell}
       </Grid>

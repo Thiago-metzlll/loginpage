@@ -6,6 +6,7 @@ function Header() {
         <header className={styles.header}>
             <Link className={styles.link} to={'/home'}>Home</Link>
             <Link className={styles.link} to={'/'}>Login</Link>
+            <Link className={styles.link} to={'/form'}>Form</Link>
         </header>
     </>
 
