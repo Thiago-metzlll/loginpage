@@ -52,6 +52,13 @@
 
 }
 
+.BtnsCard{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3%;
+}
+
 .AddCard {
   display: flex;
   align-items: center;
@@ -102,3 +109,29 @@
     color: #666;
     margin-bottom: 6px;
   }
+
+
+ .EditButton {
+    background-color: #104715; // vermelho de alerta
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #186b1f; // tom mais escuro no hover
+  }
+
+  &:active {
+    background-color: #a93226; // tom ainda mais escuro no clique
+  }
+
+  svg {
+    font-size: 10px;
+  }
+
+ }
