@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './Home.module.scss';
 import { useNavigate } from 'react-router-dom';
 import { useCartoes } from '../../hooks/useCards';
-import GridCard from './../../components/container/GridCard';
+import GridCard from './../../components/container/grid_card/GridCard';
 
 function Home() {
   const navigate = useNavigate();

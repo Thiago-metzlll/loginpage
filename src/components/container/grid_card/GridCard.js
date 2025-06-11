@@ -2,6 +2,8 @@ import React from 'react';
 import { FixedSizeGrid as Grid } from 'react-window';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons';
+import styles from './GridCard.module.scss'
+
 
 function GridCard({ cartoes, onEdit, onDelete, onAdd, larguraCartao = 250, alturaCartao = 120, GAP = 10 }) {
   const colunas = 5;
@@ -53,7 +55,7 @@ function GridCard({ cartoes, onEdit, onDelete, onAdd, larguraCartao = 250, altur
       rowCount={linhas}
       columnWidth={cellWidth}
       rowHeight={cellHeight}
-      height={600}
+      height={2000}
       width={cellWidth * colunas}
     >
       {Cell}

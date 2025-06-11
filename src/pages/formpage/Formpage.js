@@ -1,8 +1,8 @@
 import React from 'react';
-import FormsCard from './../../components/container/FormsCard'; 
+import FormsCard from './../../components/container/forms_card/FormsCard'; 
 
 function FormPage() {
-  return <FormCardContainer />;
+  return <FormsCard />;
 }
 
 export default FormPage;

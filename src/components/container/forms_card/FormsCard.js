@@ -1,10 +1,12 @@
- import CardItem from '../ui/pastateste/CardItem';
- import React, { useState, useEffect } from 'react';
+import CardItem from '../../ui/pastateste/CardItem';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import styles from './FormsCard.module.scss'
 
 
- function FormsCard () {
-    const navigate = useNavigate();
+
+function FormsCard() {
+  const navigate = useNavigate();
   const location = useLocation();
 
   // Pega o cartão que veio pela navegação (se houver)
@@ -56,7 +58,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
     navigate('/home');
   };
 
-   return (
+  return (
     <CardItem
       nome={nome}
       descricao={descricao}
@@ -67,6 +69,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
       onSubmit={handleSubmit}
       titulo={cartaoEdit ? 'Editar Cartão' : 'Criar Novo Cartão'}
     />
-  );}
+  );
+}
 
-  export default FormsCard
+export default FormsCard
