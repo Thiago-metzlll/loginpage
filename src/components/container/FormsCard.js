@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import styles from './Formpage.module.scss';
-import { useLocation, useNavigate } from 'react-router-dom';
+ import CardItem from '../ui/Card.item/CardItem.module.scss';
 
-function Formulario() {
-  const navigate = useNavigate();
+ function FormsCard () {
+    const navigate = useNavigate();
   const location = useLocation();
 
   // Pega o cartão que veio pela navegação (se houver)
@@ -55,37 +53,17 @@ function Formulario() {
     navigate('/home');
   };
 
-  return (
-    <div className={styles.FormularioContainer}>
-      <form className={styles.FormularioBox} onSubmit={handleSubmit}>
-        <h2>{cartaoEdit ? 'Editar Cartão' : 'Criar Novo Cartão'}</h2>
+   return (
+    <CardItem
+      nome={nome}
+      descricao={descricao}
+      imagem={imagem}
+      onNomeChange={(e) => setNome(e.target.value)}
+      onDescricaoChange={(e) => setDescricao(e.target.value)}
+      onImagemChange={(e) => setImagem(e.target.value)}
+      onSubmit={handleSubmit}
+      titulo={cartaoEdit ? 'Editar Cartão' : 'Criar Novo Cartão'}
+    />
+  );}
 
-        <input
-          type="text"
-          placeholder="Nome do cartão"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
-          required
-        />
-
-        <textarea
-          placeholder="Descrição"
-          value={descricao}
-          onChange={(e) => setDescricao(e.target.value)}
-          rows={3}
-        />
-
-        <input
-          type="text"
-          placeholder="URL da imagem"
-          value={imagem}
-          onChange={(e) => setImagem(e.target.value)}
-        />
-
-        <button type="submit">Salvar</button>
-      </form>
-    </div>
-  );
-}
-
-export default Formulario;
+  export default FormsCard

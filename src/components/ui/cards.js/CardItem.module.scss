@@ -1,15 +1,3 @@
-.Homebody {
-  background-image: url('../../../assets/Facade_opera_Garnier.jpg');
-  background-size: 1150px auto;
-
-
-  background-color: rgba(0, 0, 0, 0.5); // cor escura sem opacidade total
-  background-blend-mode: darken; // mistura a imagem com a cor
-  
-
-
-}
-
 .Card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -72,13 +60,6 @@
   background-color: #eee;
 }
 
-.AddButton {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  color: #333;
-}
 
 .DeleteButton {
   background-color: #e74c3c; // vermelho de alerta

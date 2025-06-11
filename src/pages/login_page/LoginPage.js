@@ -1,10 +1,10 @@
 import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
-import Input from "./../ui/input/Input";
-import LoginText from "./../ui/LoginText/LoginText";
+import Input from "./../../components/ui/input/Input";
+import LoginText from "./../../components/ui/login_text/LoginText";
 import styles from "./LoginPage.module.scss"
-import EnterBtn from "./../ui/allBtns/enter.btn/EnterBtn";
-import TextBtn from './../ui/allBtns/text.btn/TextBtn';
-import EnterpriseBtn from "./../ui/allBtns/empresa.btn/EnterpriseBtn";
+import EnterBtn from "./../../components/ui/allBtns/enter.btn/EnterBtn";
+import TextBtn from './../../components/ui/allBtns/text.btn/TextBtn';
+import EnterpriseBtn from "./../../components/ui/allBtns/empresa.btn/EnterpriseBtn";
 import { useState } from "react";
 
 function LoginPage() {

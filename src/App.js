@@ -1,9 +1,9 @@
 import { Routes, Route} from "react-router-dom";
 import styles from "./components/ui/App.module.scss";
-import LoginPage from "./components/pages/LoginPage";
-import Home from "./components/pages/homepage/Home";
-import Header from "./components/model/Header/Header";
-import FormPage from "./components/pages/formpage/Formpage"
+import LoginPage from "./pages/login_page/LoginPage";
+import Home from "./pages/homepage/Home";
+import Header from "./structure/header/Header";
+import FormPage from "./pages/formpage/Formpage"
 
 function App() {
   return (
