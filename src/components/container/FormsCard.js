@@ -1,4 +1,7 @@
- import CardItem from '../ui/Card.item/CardItem.module.scss';
+ import CardItem from '../ui/pastateste/CardItem';
+ import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+
 
  function FormsCard () {
     const navigate = useNavigate();
