@@ -6,19 +6,24 @@ import GridCard from './../../components/container/grid_card/GridCard';
 
 function Home() {
   const navigate = useNavigate();
-  const { cartoes, handleAdd, handleDelete } = useCartoes();
+  const { cartoes, handleAdd, handleDelete, } = useCartoes();
 
   const handleEdit = (cartao) => {
     navigate('/form', { state: { cartao } });
   };
 
+  const handleAddCard = () => {
+  navigate('/form'); // sem state = criação de novo cartão
+};
+
+
   return (
     <div className={styles.Homebody}>
       <GridCard
         cartoes={cartoes}
-        onAdd={handleAdd}
         onDelete={handleDelete}
         onEdit={handleEdit}
+        onAdd={handleAddCard }
       />
     </div>
   );

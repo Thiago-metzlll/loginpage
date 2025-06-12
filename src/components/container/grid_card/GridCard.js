@@ -55,7 +55,7 @@ function GridCard({ cartoes, onEdit, onDelete, onAdd, larguraCartao = 250, altur
       rowCount={linhas}
       columnWidth={cellWidth}
       rowHeight={cellHeight}
-      height={2000}
+      height={600}
       width={cellWidth * colunas}
     >
       {Cell}
