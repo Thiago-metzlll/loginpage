@@ -1,6 +1,9 @@
+import {createGlobalStyle} from 'styled-components'
+
+export const GlobalStyle = createGlobalStyle `
 body {
-   background-color: var(--background-color);
-  color: var(--text-color);
+   background-color: ${({theme}) => theme.colors.background};
+   color: ${({theme}) => theme.colors.text};
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -8,3 +11,4 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+`

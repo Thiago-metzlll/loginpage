@@ -1,5 +1,6 @@
 .header {
-  background-color:  #204852;
+  background-color: var(--header-bg);
+  color: var(--header-text);
   padding: 10px 20px;
   display: flex;
   justify-content: flex-end;  
