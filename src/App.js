@@ -6,6 +6,8 @@ import FormPage from "./pages/formpage/Formpage"
 import { ThemeProvider } from "./theme/themeContext";
 import { GlobalStyle } from "./styles/GlobalStyles";
 import styled from 'styled-components';
+import PrivateRoute from "./PrivateRoute";
+import { AuthProvider } from "./context/AuthContext";
 
 
 const AppStyle = styled.div`
@@ -52,17 +54,25 @@ const AppStyle = styled.div`
 
 function App() {
   return (
-    <ThemeProvider>
-      <GlobalStyle/>
+    <AuthProvider>
+      <ThemeProvider>
+        <GlobalStyle />
         <AppStyle>
           <Header />
           <Routes>
             <Route path='/' element={<LoginPage />} />
-            <Route path='/home' element={<Home />} />
-            <Route path='/form' element={<FormPage />} />
+            <Route path='/home' element={
+              <PrivateRoute>
+                <Home />
+              </PrivateRoute>} />
+            <Route path='/form' element={
+              <PrivateRoute>
+                <FormPage />
+              </PrivateRoute>} />
           </Routes>
         </AppStyle>
-    </ThemeProvider>
+      </ThemeProvider>
+    </AuthProvider>
 
 
   );

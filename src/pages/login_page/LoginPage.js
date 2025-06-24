@@ -6,40 +6,50 @@ import EnterBtn from "./../../components/ui/allBtns/enter.btn/EnterBtn";
 import TextBtn from './../../components/ui/allBtns/text.btn/TextBtn';
 import EnterpriseBtn from "./../../components/ui/allBtns/empresa.btn/EnterpriseBtn";
 import { useState } from "react";
+import { useAuth } from "./../../../src/context/AuthContext"
+import { useNavigate } from 'react-router-dom';
+
 
 function LoginPage() {
     const [email, setEmail] = useState('');
     const [emailError, setEmailError] = useState('');
     const [senha, setSenha] = useState('');
     const [senhaError, setSenhaError] = useState('');
+    const navigate = useNavigate();
 
     const senhaTeste = '123456';
     const emailTeste = 'thiagostopla@gmail.com'
 
-    const handleEmailChange = (e) => {
-        setEmail(e.target.value);
-        if (emailError) setEmailError('');
-    };
+    
 
-    const validateEmail = () => {
+    const { login } = useAuth()
+
+    const handleLogin = () => {
+        let valid = true;
+
         if (!email.includes('@')) {
             setEmailError('Email inválido');
+            valid = false;
         } else if (email !== emailTeste) {
             setEmailError('Email não corresponde ao cadastro.');
+            valid = false;
         } else {
             setEmailError('');
-            alert('Email correto!');
         }
-    };
 
-    const validateSenha = () => {
         if (senha.length < 6) {
             setSenhaError('A senha deve ter pelo menos 6 caracteres.');
+            valid = false;
         } else if (senha !== senhaTeste) {
             setSenhaError('Senha incorreta.');
+            valid = false;
         } else {
             setSenhaError('');
-            alert('Senha correta!');
+        }
+
+        if (valid) {
+            login();
+            navigate('/home');
         }
     };
     return <>
@@ -48,18 +58,18 @@ function LoginPage() {
             <Input
                 placeholder="Usuário"
                 value={email}
-                onChange={handleEmailChange}
-                onBlur={validateEmail}
+                onChange={e => setEmail(e.target.value)}
                 error={emailError} />
             <Input
                 placeholder="Senha"
                 type="password"
                 value={senha}
                 onChange={e => setSenha(e.target.value)}
-                onBlur={validateSenha}
                 error={senhaError}
             />
-            <EnterBtn texto="Entrar" />
+                  {senhaError && <p style={{ color: 'red' }}>{senhaError}</p>}
+
+            <EnterBtn texto="Entrar" onClick={handleLogin} />
             <EnterpriseBtn icon={faCircleUser} />
             <TextBtn texto="Criar contaaaa" />
 

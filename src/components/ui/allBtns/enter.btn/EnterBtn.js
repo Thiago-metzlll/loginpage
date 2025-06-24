@@ -2,7 +2,7 @@ import styles from './EnterBtn.module.scss'
 
 function EnterBtn ({texto}){
     return<>
-    <button id= "textbtn" className={styles.TextBtn}> {texto} </button>
+    <button id= "textbtn" className={styles.TextBtn} > {texto} </button>
     </>
 }
 
