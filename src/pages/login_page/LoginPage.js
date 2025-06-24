@@ -65,7 +65,6 @@ function LoginPage() {
                 type="password"
                 value={senha}
                 onChange={e => setSenha(e.target.value)}
-                error={senhaError}
             />
                   {senhaError && <p style={{ color: 'red' }}>{senhaError}</p>}
 
