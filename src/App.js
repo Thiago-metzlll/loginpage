@@ -8,6 +8,8 @@ import { GlobalStyle } from "./styles/GlobalStyles";
 import styled from 'styled-components';
 import PrivateRoute from "./PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
+import GeoquizPage from './pages/geoquiz_page/src/GeoquizPage';
+
 
 
 const AppStyle = styled.div`
@@ -56,21 +58,24 @@ function App() {
   return (
     <AuthProvider>
       <ThemeProvider>
-        <GlobalStyle />
-        <AppStyle>
-          <Header />
-          <Routes>
-            <Route path='/' element={<LoginPage />} />
-            <Route path='/home' element={
-              <PrivateRoute>
-                <Home />
-              </PrivateRoute>} />
-            <Route path='/form' element={
-              <PrivateRoute>
-                <FormPage />
-              </PrivateRoute>} />
-          </Routes>
-        </AppStyle>
+          <GlobalStyle />
+          <AppStyle>
+            <Header />
+            <Routes>
+              <Route path='/login' element={<LoginPage />} />
+              <Route path='/' element={
+                <GeoquizPage />} />
+              <Route path='/cards' element={
+                <PrivateRoute>
+                  <Home />
+                </PrivateRoute>} />
+              <Route path='/form' element={
+                <PrivateRoute>
+                  <FormPage />
+                </PrivateRoute>} />
+            </Routes>
+          </AppStyle>
+  
       </ThemeProvider>
     </AuthProvider>
 

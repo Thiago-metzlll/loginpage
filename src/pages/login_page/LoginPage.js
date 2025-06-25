@@ -20,7 +20,7 @@ function LoginPage() {
     const senhaTeste = '123456';
     const emailTeste = 'thiagostopla@gmail.com'
 
-    
+
 
     const { login } = useAuth()
 
@@ -49,7 +49,7 @@ function LoginPage() {
 
         if (valid) {
             login();
-            navigate('/home');
+            navigate('/cards');
         }
     };
     return <>
@@ -59,14 +59,14 @@ function LoginPage() {
                 placeholder="Usuário"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
-                error={emailError} />
+            />            {emailError && <p style={{ color: 'red' }}>{emailError}</p>}
             <Input
                 placeholder="Senha"
                 type="password"
                 value={senha}
                 onChange={e => setSenha(e.target.value)}
             />
-                  {senhaError && <p style={{ color: 'red' }}>{senhaError}</p>}
+            {senhaError && <p style={{ color: 'red' }}>{senhaError}</p>}
 
             <EnterBtn texto="Entrar" onClick={handleLogin} />
             <EnterpriseBtn icon={faCircleUser} />
