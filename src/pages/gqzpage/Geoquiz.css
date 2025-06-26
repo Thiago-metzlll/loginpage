@@ -1,0 +1,29 @@
+@import url(./styles/container/quiz.css);
+@import url(./styles/ui/animated.globe.css);
+@import url(./styles/container/text_secondbtn.css);
+
+.body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 0;
+}
+
+
+main {
+    width: 100%;
+    height: 76%;
+    background-image: url('/../loginpage/src/assets/ChatGPT\ Image\ 24\ de\ jun.\ de\ 2025\,\ 21_02_53.png');
+    background-size: 1000px auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+    background-blend-mode: darken; 
+
+    padding: 5% 33%;
+}
+
+footer {
+    width: 100%;
+    height: 12%;
+    background-color: rgba(240, 248, 255, 0.329);
+
+
+}

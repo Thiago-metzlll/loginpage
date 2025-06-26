@@ -1,0 +1,54 @@
+.line_center{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.line_space_around_r{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.column_center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.line_end_r{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.line_start_r{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.column_space_between{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line_space_between{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.culumn_start{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}

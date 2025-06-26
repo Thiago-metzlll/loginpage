@@ -1,0 +1,27 @@
+.btns {
+    width: 50%;
+    height: 15%;
+    min-height: 40px;
+    padding: 12px 16px;
+
+    background: #fbca1f;
+    font-family: inherit;
+    
+    font-weight: 900;
+    font-size: 15px;
+    border: 3px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.1em 0.1em;
+    cursor: pointer;
+
+}
+
+.btns:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em;
+}
+
+.btns:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em;
+}

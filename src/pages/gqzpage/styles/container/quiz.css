@@ -1,0 +1,41 @@
+@import url(./aling.css);
+@import url(./../ui/btnpass.css);
+@import url(./../ui/buttons.css);
+
+#quiz_block {
+    width: 100%;
+    height: 60vh;
+    background-color: aqua;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 10%;
+
+}
+
+
+#opcoes-container {
+    width: 100%;
+    height: 30%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin: 7% 10%;
+
+    
+}
+
+.pergunta {
+    font-family: "Anton", sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    font-style: normal;
+}
+
