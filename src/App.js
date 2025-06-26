@@ -8,7 +8,7 @@ import { GlobalStyle } from "./styles/GlobalStyles";
 import styled from 'styled-components';
 import PrivateRoute from "./PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
-import GeoquizPage from './pages/geoquiz_page/src/GeoPage';
+import GeoquizPage from './pages/GeoquizPage/src/GeoPage';
 
 
 
