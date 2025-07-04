@@ -1,10 +1,5 @@
 
-const quizData = [
-  {
-    pergunta: "A língua mais próxima ao português é",
-    respostas: ["Espanhol", "Galego", "Italiano", "português arcaico da Guiana brasileira"],
-    correta: 1,
-  },
+    const quizData = [
   {
     pergunta: "Qual é a capital do Uruguai?",
     respostas: ["Montevidéu", "Assunção", "Buenos Aires", "Santiago"],
