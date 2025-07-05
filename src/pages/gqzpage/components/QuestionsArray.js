@@ -2,7 +2,7 @@
 const quizData = [
   {
     pergunta: "A língua mais próxima ao português é",
-    respostas: ["Espanhol", "Galego", "Italiano", "português arcaico da Guiana brasileira"],
+    respostas: ["Espanhol", "Galego", "Italiano", "pt-eu de Pernambuco em pé"],
     correta: 1,
   },
   {
