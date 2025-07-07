@@ -3,10 +3,11 @@
 @import url(./../ui/buttons.css);
 
 #quiz_block {
-    width: 100%;
+    width: 70%;
     height: 60vh;
     background-color: aqua;
     position: relative;
+    margin-left: 15%;
 
     display: flex;
     flex-direction: column;

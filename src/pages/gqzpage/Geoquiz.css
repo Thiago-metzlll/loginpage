@@ -2,28 +2,34 @@
 @import url(./styles/ui/animated.globe.css);
 @import url(./styles/container/text_secondbtn.css);
 
-.body {
+/* Corrigido: .body → body (classe .body não afeta o <body>) */
+body {
     width: 100vw;
     height: 100vh;
-    margin: 0 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-
+/* Corrigido comportamento do main para responsividade no Chrome */
 main {
     width: 100%;
-    height: 76%;
-    /* background-image: url('/../loginpage/src/assets/chat.png'); */
-    background-size: 1000px auto;
-    background-color: rgba(0, 0, 0, 0.5); 
-    background-blend-mode: darken; 
+    height: 76vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: darken;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 
-    padding: 5% 33%;
+    padding: 5% 10%; /* Evita que o conteúdo suma em telas menores */
+    box-sizing: border-box;
 }
 
+/* Footer ajustado para garantir visibilidade e tamanho proporcional */
 footer {
     width: 100%;
-    height: 12%;
+    height: 12vh;
     background-color: rgba(240, 248, 255, 0.329);
-
-
+    box-sizing: border-box;
 }
