@@ -1,5 +1,7 @@
 // src/components/CadastroForm/CadastroForm.jsx
 import React, { useState } from 'react';
+import styles from './Cadastro.module.scss';
+
 
 function CadastroForm({ onSubmit }) {
   const [nome, setNome] = useState('');
