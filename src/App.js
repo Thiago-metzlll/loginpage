@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import PrivateRoute from "./PrivateRoute";
 import { AuthProvider } from "./context/AuthContext";
 import GeoquizPage from './pages/gqzpage/GeoPage';
+import CadastroForm from './pages/CadastroPage/CadastroForm'
 
 
 
@@ -63,6 +64,7 @@ function App() {
             <Header />
             <Routes>
               <Route path='/login' element={<LoginPage />} />
+              <Route path='/cadastro' element={<CadastroForm/>} />
               <Route path='/' element={
                 <GeoquizPage />} />
               <Route path='/cards' element={

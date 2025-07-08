@@ -1,6 +1,8 @@
 // src/components/CadastroForm/CadastroForm.jsx
 import React, { useState } from 'react';
 import styles from './Cadastro.module.scss';
+import { useNavigate } from 'react-router-dom';
+
 
 
 function CadastroForm({ onSubmit }) {
@@ -8,12 +10,17 @@ function CadastroForm({ onSubmit }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
+  const navigate = useNavigate();
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ nome, email, senha });
     setNome('');
     setEmail('');
     setSenha('');
+    navigate('/cards'); // redireciona após o cadastro
+
   };
 
   return (
